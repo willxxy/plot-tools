@@ -41,3 +41,23 @@ axs[1].set_title('Time Series Plot')
 # Adjust layout and save the figure
 plt.tight_layout()
 plt.savefig('./side_by_side_plots.png')
+
+
+### PLOTTING TWO ONE D ARRAY OVERLAYED
+
+plt.figure()
+
+# First subplot
+plt.plot(time, gen_data, label='Reconstructed Signal')
+plt.plot(time, gt_data, label='Ground Truth')
+plt.ylim(min(gt_data), max(gt_data))
+plt.title('Comparison of Reconstructed and Ground Truth EGM Signal')
+plt.xlabel('Time')
+plt.ylabel('Amplitude')
+plt.legend(loc='upper right')
+# Adjust layout and save the figure
+plt.grid(True)
+plt.tight_layout()
+plt.savefig(f'./viz_rbf/{label_data}_{count}.png')
+plt.close()
+
